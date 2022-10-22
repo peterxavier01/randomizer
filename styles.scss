@@ -1,5 +1,5 @@
-$primaryColor: #59C3C3;
-$secondaryColor: #52489C; 
+$primaryColor: #59c3c3;
+$secondaryColor: #52489c;
 $white: #fff;
 $gray: #555;
 $borderRadius: 6px;
@@ -16,6 +16,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  padding: 1em;
 }
 
 .form-container {
@@ -35,7 +36,11 @@ body {
 }
 
 form {
-  width: 350px;
+  width: 100%;
+
+  @media screen and (min-width: 768px) {
+    width: 350px;
+  }
 }
 
 form input {
