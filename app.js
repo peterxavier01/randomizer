@@ -4,6 +4,12 @@ const button = document.querySelector("form button");
 const clipboard = document.querySelector(".fa-clipboard-list");
 const outputContainer = document.querySelector(".output-container");
 
+function onInputFocus() {
+  input.type = "text";
+  input.setSelectionRange(0, 99999);
+  input.type = "number";
+}
+
 input.addEventListener("keyup", () => {
   const inputValue = Number(input.value);
   if (inputValue === null || inputValue < 6) {
@@ -43,5 +49,5 @@ clipboard.addEventListener("click", (e) => {
   alert("Copied password: " + output.innerText);
 
   input.select();
-  input.setSelectionRange(0, 99999);
+  onInputFocus();
 });
