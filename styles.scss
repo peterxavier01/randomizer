@@ -1,0 +1,111 @@
+$primaryColor: #59C3C3;
+$secondaryColor: #52489C; 
+$white: #fff;
+$gray: #555;
+$borderRadius: 6px;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(to bottom right, $primaryColor, $secondaryColor);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.form-container {
+  background-color: $white;
+  padding: 1em;
+  border-radius: $borderRadius;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  color: $gray;
+  font-size: 35px;
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+
+form {
+  width: 350px;
+}
+
+form input {
+  padding: 1em;
+  border-radius: $borderRadius;
+  border: 1px solid $gray;
+  margin-bottom: 1em;
+  outline: none;
+  color: $gray;
+  width: 100%;
+
+  &:focus {
+    outline: 2px solid $primaryColor;
+    border: 1px solid transparent;
+  }
+}
+
+form button {
+  padding: 1em;
+  color: $white;
+  border-radius: $borderRadius;
+  border: 1px solid $secondaryColor;
+  background: linear-gradient(to right, $primaryColor, $secondaryColor);
+  outline: none;
+  cursor: not-allowed;
+  width: 100%;
+  opacity: 0.7;
+  font-weight: 600;
+  transition: 0.3s all ease-in-out;
+
+  &:hover {
+    border: 1px solid $secondaryColor;
+    color: $secondaryColor;
+    background: $white;
+  }
+}
+
+form button.enabled {
+  opacity: 1;
+  cursor: pointer;
+}
+
+form button.disabled {
+  opacity: 0.6;
+}
+
+.output-container {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid $gray;
+  margin-bottom: 1em;
+  padding: 2em 1em;
+  border-radius: $borderRadius;
+  width: 100%;
+  overflow: hidden;
+
+  i {
+    color: $gray;
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding-left: 1em;
+  }
+}
+
+.output-password {
+  word-break: break-word;
+  text-align: left;
+}
+
+.visible {
+  display: flex;
+}
